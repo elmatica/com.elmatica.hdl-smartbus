@@ -20,5 +20,33 @@
   "author": {
     "name": "Max Brosnahan",
     "email": "maximilian.brosnahan@gmail.com"
-  }
+  },
+  "drivers": [
+    {
+      "id": "montionsensor",
+      "name": {
+        "en": "montionsensor"
+      },
+      "class": "sensor",
+      "capabilities": [
+        "alarm_motion"
+      ],
+      "images": {
+        "large": "/drivers/montionsensor/assets/images/large.png",
+        "small": "/drivers/montionsensor/assets/images/small.png"
+      },
+      "pair": [
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }]
+    }
+  ]
 }
