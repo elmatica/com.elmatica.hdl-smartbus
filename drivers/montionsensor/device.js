@@ -7,13 +7,15 @@ class DeviceMotionSensor extends Homey.Device {
     this.log("Device init");
     this.log("Name:", this.getName());
     this.log("Class:", this.getClass());
+    this.log("Id:", this.getData().id);
 
     this.startListening();
   }
 
   startListening() {
     this._bus = new SmartBus("hdl://1.52@10.24.24.12:6000");
-    this._motionSensor = this._bus.device("1.48");
+    const id = this.getData().id;
+    this._motionSensor = this._bus.device(id);
     this._motionSensor.on(49, (data, target) => {
       this.log(data);
       if (data.level == 100) {
