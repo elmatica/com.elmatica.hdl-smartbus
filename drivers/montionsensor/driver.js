@@ -7,7 +7,7 @@ class DriverMotionSensor extends Homey.Driver {
   onInit() {
     super.onInit();
     this._bus = new SmartBus("hdl://10.24.24.12:6000");
-    bus.on("close", function() {
+    this._bus.on("close", function() {
       this.log("closing from DriverMotionSensor");
     });
   }
