@@ -1,0 +1,24 @@
+{
+  "id": "com.elmatica.hdl-smartbus",
+  "version": "0.0.1",
+  "compatibility": ">=2.0.0",
+  "sdk": 2,
+  "name": {
+    "en": "HDL Smartbus"
+  },
+  "description": {
+    "en": "Support for HDL Smartbus"
+  },
+  "category": [
+    "lights"
+  ],
+  "permissions": [],
+  "images": {
+    "large": "/assets/images/large.png",
+    "small": "/assets/images/small.png"
+  },
+  "author": {
+    "name": "Max Brosnahan",
+    "email": "maximilian.brosnahan@gmail.com"
+  }
+}
