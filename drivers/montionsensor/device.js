@@ -1,5 +1,4 @@
 "use strict";
-const SmartBus = require("smart-bus");
 const Homey = require("homey");
 
 class DeviceMotionSensor extends Homey.Device {
@@ -13,7 +12,7 @@ class DeviceMotionSensor extends Homey.Device {
   }
 
   _bus() {
-    return this.getDriver()._bus;
+    return Homey.app.bus();
   }
   startListening() {
     const id = this.getData().id;

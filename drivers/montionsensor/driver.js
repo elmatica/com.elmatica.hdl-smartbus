@@ -1,13 +1,12 @@
 "use strict";
 
 const Homey = require("homey");
-const SmartBus = require("smart-bus");
 
 class DriverMotionSensor extends Homey.Driver {
   onInit() {
     super.onInit();
-    this._bus = new SmartBus("hdl://10.24.24.12:6000");
-    this._bus.on("close", function() {
+
+    this._bus().on("close", function() {
       this.log("closing from DriverMotionSensor");
     });
   }
@@ -16,7 +15,7 @@ class DriverMotionSensor extends Homey.Driver {
     this.log("onPairListDevices from DriverMotionSensor");
 
     const devices = [];
-    this._bus.on("command", function(command) {
+    this._bus().on("command", function(command) {
       if (command.sender.type == 328) {
         devices.push({
           name: `SensorInOne ${command.sender.id}`,
@@ -27,7 +26,7 @@ class DriverMotionSensor extends Homey.Driver {
       }
     });
 
-    this._bus.send("255.255", 0x000e, function(err) {
+    this._bus().send("255.255", 0x000e, function(err) {
       if (err) {
         this.log(err);
       }
@@ -36,6 +35,10 @@ class DriverMotionSensor extends Homey.Driver {
     setTimeout(() => {
       callback(null, devices);
     }, 2000);
+  }
+
+  _bus() {
+    return Homey.app.bus();
   }
 }
 
