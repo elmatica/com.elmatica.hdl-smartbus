@@ -12,10 +12,12 @@ class DeviceMotionSensor extends Homey.Device {
     this.startListening();
   }
 
+  _bus() {
+    return this.getDriver()._bus;
+  }
   startListening() {
-    this._bus = new SmartBus("hdl://1.52@10.24.24.12:6000");
     const id = this.getData().id;
-    this._motionSensor = this._bus.device(id);
+    this._motionSensor = this._bus().device(id);
     this._motionSensor.on(49, (data, target) => {
       this.log(data);
       if (data.level == 100) {
