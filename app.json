@@ -9,9 +9,7 @@
   "description": {
     "en": "Support for HDL Smartbus"
   },
-  "category": [
-    "lights"
-  ],
+  "category": ["lights"],
   "permissions": [],
   "images": {
     "large": "/assets/images/large.png",
@@ -28,9 +26,7 @@
         "en": "montionsensor"
       },
       "class": "sensor",
-      "capabilities": [
-        "alarm_motion"
-      ],
+      "capabilities": ["alarm_motion"],
       "images": {
         "large": "/drivers/montionsensor/assets/images/large.png",
         "small": "/drivers/montionsensor/assets/images/small.png"
@@ -46,7 +42,8 @@
         {
           "id": "add_devices",
           "template": "add_devices"
-        }]
+        }
+      ]
     }
   ]
 }
