@@ -1,0 +1,25 @@
+{
+  "name": "com.elmatica.hdl-smartbus",
+  "version": "1.0.0",
+  "description": "Support for HDL Smartbus",
+  "main": "app.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elmatica/com.elmatica.hdl-smartbus.git"
+  },
+  "author": "",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/elmatica/com.elmatica.hdl-smartbus/issues"
+  },
+  "homepage": "https://github.com/elmatica/com.elmatica.hdl-smartbus#readme",
+  "dependencies": {
+    "smart-bus": "^0.5.0"
+  }
+}
